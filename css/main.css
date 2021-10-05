@@ -5,3 +5,69 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+/* UTILITIES */
+/* displays */
+.container {
+    height: 100vh;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+/* distances */
+
+
+/* MAIN SECTION */
+section.main {
+    background-color: green;
+    overflow: auto;
+}
+
+/* aside */
+aside {
+    width: 230px;
+    background-color: orange;
+}
+
+/* main */
+main {
+    background-color: gold;
+    padding-top: 90px;
+    overflow-y: auto;
+}
+
+main .fixed {
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    width: calc(100% - 230px);
+    height: 90px;
+    text-align: right;
+    padding: 20px 5px;
+}
+
+.canzone {
+    height: 150px;
+    width: 100%;
+}
+
+/* FOOTER */
+footer {
+    flex-basis: 90px;
+    flex-shrink: 0;
+    background-color: blue;
+}
