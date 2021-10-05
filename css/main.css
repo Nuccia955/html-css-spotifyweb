@@ -47,6 +47,10 @@ button {
     flex-grow: 1;
 }
 
+.text-center {
+    text-align: center;
+}
+
 ul {
     list-style: none;
 }
@@ -67,6 +71,14 @@ ul {
 
 .mr_10 {
     margin-right: 10px;
+}
+
+.mb_40 {
+    margin-bottom: 40px;
+}
+
+.my_20 {
+    margin: 20px auto;
 }
 
 .pb_10 {
@@ -132,7 +144,7 @@ aside .user i {
 /* main */
 main {
     background-color: gold;
-    padding-top: 90px;
+    padding: 90px 20px 20px;
     overflow-y: auto;
 }
 
@@ -146,9 +158,27 @@ main .fixed {
     padding: 20px 5px;
 }
 
-.canzone {
-    height: 150px;
+main nav ul {
+    justify-content: center;
+}
+
+main nav ul li {
+    margin: 0 25px;
+    padding: 5px 0;
+}
+
+main .music_cards {
+    justify-content: space-between;
+}
+
+main .music_cards .song_card {
+    width: calc(100% / 6);
+    margin: 0 5px;
+}
+
+.music_cards .song_card img {
     width: 100%;
+    object-fit: contain;
 }
 
 /* FOOTER */
