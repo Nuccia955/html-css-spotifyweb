@@ -6,8 +6,27 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    font-size: 13px;
+}
+
 /* UTILITIES */
 /* displays */
+a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.align-center {
+    align-items: center;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
 .container {
     height: 100vh;
 }
@@ -28,8 +47,31 @@
     flex-grow: 1;
 }
 
-/* distances */
+ul {
+    list-style: none;
+}
 
+/* colors */
+.color_white {
+    color: white;
+}
+
+/* distances */
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.mb_25 {
+    margin-bottom: 25px;
+}
+
+.mr_10 {
+    margin-right: 10px;
+}
+
+.pb_10 {
+    padding-bottom: 10px;
+}
 
 /* MAIN SECTION */
 section.main {
@@ -41,6 +83,50 @@ section.main {
 aside {
     width: 230px;
     background-color: orange;
+    padding: 0 20px;
+    overflow-y: auto;
+}
+
+aside .logo {
+    line-height: 90px;
+}
+
+aside .logo img {
+    vertical-align: middle;
+}
+
+aside nav li.action a {
+    align-items: center;
+}
+
+aside nav img {
+    height: 25px;
+}
+
+.add-playlist i {
+    padding: 12px;
+    background-color: lightgray;
+}
+
+aside .playlists .add-playlist span {
+    font-size: 15px;
+}
+
+aside .playlist-names span {
+    line-height: 25px;
+}
+
+aside .playlists .install {
+    border-bottom: 1px solid black;
+}
+
+aside .user {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+aside .user i {
+    font-size: 25px;
 }
 
 /* main */
