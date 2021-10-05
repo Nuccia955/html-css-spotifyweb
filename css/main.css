@@ -65,16 +65,24 @@ ul {
     margin-bottom: 10px;
 }
 
+.mb_20 {
+    margin-bottom: 20px;
+}
+
 .mb_25 {
     margin-bottom: 25px;
+}
+
+.mb_40 {
+    margin-bottom: 40px;
 }
 
 .mr_10 {
     margin-right: 10px;
 }
 
-.mb_40 {
-    margin-bottom: 40px;
+.mt_25 {
+    margin-top: 25px;
 }
 
 .my_20 {
@@ -97,6 +105,7 @@ aside {
     background-color: orange;
     padding: 0 20px;
     overflow-y: auto;
+    flex-shrink: 0;
 }
 
 aside .logo {
@@ -167,12 +176,8 @@ main nav ul li {
     padding: 5px 0;
 }
 
-main .music_cards {
-    justify-content: space-between;
-}
-
 main .music_cards .song_card {
-    width: calc(100% / 6);
+    width: calc(100% / 6 - 10px);
     margin: 0 5px;
 }
 
