@@ -8,6 +8,10 @@
 
 body {
     font-size: 13px;
+    color: #7d7f84;
+    background-color: #141922;
+    font-weight: 600;
+    cursor: default;
 }
 
 /* UTILITIES */
@@ -25,6 +29,7 @@ a {
 button {
     border: none;
     background-color: transparent;
+    color: inherit;
 }
 
 .container {
@@ -56,7 +61,7 @@ ul {
 }
 
 /* colors */
-.color_white {
+.white {
     color: white;
 }
 
@@ -99,14 +104,13 @@ ul {
 
 /* MAIN SECTION */
 section.main {
-    background-color: green;
     overflow: auto;
 }
 
 /* aside */
 aside {
     width: 230px;
-    background-color: orange;
+    background-color: #000000;
     padding: 0 20px;
     overflow-y: auto;
     flex-shrink: 0;
@@ -156,9 +160,9 @@ aside .user i {
 
 /* main */
 main {
-    background-color: gold;
     padding: 90px 20px 20px;
     overflow-y: auto;
+    flex-wrap: wrap;
 }
 
 main .fixed {
@@ -169,6 +173,12 @@ main .fixed {
     height: 90px;
     text-align: right;
     padding: 20px 5px;
+}
+
+main .fixed button {
+    border: 1px solid white;
+    padding: 10px 40px;
+    border-radius: 50px;
 }
 
 main nav ul {
@@ -185,7 +195,12 @@ main .music_cards .song_card {
     margin: 0 5px;
 }
 
+.music_cards:last-child .song_card .cover {
+    border-radius: 50%;
+    overflow: hidden;
+}
 .music_cards .song_card img {
+    display: block;
     width: 100%;
     object-fit: contain;
 }
@@ -193,36 +208,117 @@ main .music_cards .song_card {
 /* FOOTER */
 footer {
     justify-content: space-between;
-    flex-basis: 90px;
+    height: 90px;
     flex-shrink: 0;
-    background-color: pink;
+    background-color: #282828;
     padding: 10px;
 }
 
 footer.main_actions .actions_left,
 footer.main_actions .actions_right {
-    min-width: 15%;
+    width: 15%;
 }
 
 footer .console button {
     margin: 0 20px;
 }
 
-footer .progress {
+footer .actions_left img {
+    height: 100%;
+}
+
+footer span {
+    font-size: 10px;
+}
+
+footer .title span:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer .actions_central {
+    color: white;
+}
+
+footer .actions_central button i {
+    font-size: 18px;
+}
+
+footer .actions_central .play {
+    font-size: 28px;
+}
+
+footer .actions_central .play:hover {
+    transform: scale(1.2);
+}
+
+footer .actions_left i,
+footer .actions_right i {
+    font-size: 15px;
+}
+
+footer i:hover {
+    color: white;
+    cursor: pointer;
+}
+
+footer .actions_left span:hover {
+    cursor: pointer;
+}
+
+footer .progress_bar:hover {
+    cursor: pointer;
+}
+
+footer .actions_central .progress {
     min-width: 50%;
     justify-content: space-between;
 }
 
 footer .progress_bar {
-    height: 5px;
+    height: 4px;
     background-color: grey;
     border-radius: 5px;
+    position: relative;
+}
+
+footer .progress_bar::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 35%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+footer .progress_bar::after {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: calc(4px + 10px);
+    height: calc(100% + 10px);
+    background-color: white;
+    border-radius: 50%;
+}
+
+footer .progress:hover .progress_bar::after {
+    display: block;
+}
+
+footer .progress:hover .progress_bar::before {
+    background-color: #1ed760;
 }
 
 .actions_right {
     justify-content: space-between;
 }
 
-.actions_right .progress_bar {
+.actions_right .progress {
     min-width: 60%;
 }
