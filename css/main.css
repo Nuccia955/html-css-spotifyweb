@@ -81,6 +81,10 @@ ul {
     margin-right: 10px;
 }
 
+.mr_20 {
+    margin-right: 20px;
+}
+
 .mt_25 {
     margin-top: 25px;
 }
@@ -188,7 +192,37 @@ main .music_cards .song_card {
 
 /* FOOTER */
 footer {
+    justify-content: space-between;
     flex-basis: 90px;
     flex-shrink: 0;
-    background-color: blue;
+    background-color: pink;
+    padding: 10px;
+}
+
+footer.main_actions .actions_left,
+footer.main_actions .actions_right {
+    min-width: 15%;
+}
+
+footer .console button {
+    margin: 0 20px;
+}
+
+footer .progress {
+    min-width: 50%;
+    justify-content: space-between;
+}
+
+footer .progress_bar {
+    height: 5px;
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.actions_right {
+    justify-content: space-between;
+}
+
+.actions_right .progress_bar {
+    min-width: 60%;
 }
