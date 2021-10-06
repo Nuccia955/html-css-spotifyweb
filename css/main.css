@@ -77,6 +77,9 @@ ul {
 }
 
 /* distances */
+.mb_5 {
+    margin-bottom: 5px;
+}
 .mb_10 {
     margin-bottom: 10px;
 }
@@ -111,6 +114,23 @@ ul {
 
 .pb_10 {
     padding-bottom: 10px;
+}
+
+/* font */
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+.up_case{
+    text-transform: uppercase;
 }
 
 /* MAIN SECTION */
@@ -157,10 +177,12 @@ aside .playlists .add-playlist {
     font-size: 15px;
 }
 
+aside .playlists button:hover i {
+    background-color: #fff;
+}
 aside a:hover,
 aside span:hover,
-aside .playlists button:hover,
-aside .playlists button:hover i {
+aside .playlists button:hover {
     color: white;
     cursor: pointer;
 }
@@ -212,11 +234,35 @@ main nav ul {
 main nav ul li {
     margin: 0 25px;
     padding: 5px 0;
+    position: relative;
+}
+
+main nav ul li .underline {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 2px;
+    background-color: #1ed760;
+}
+
+main nav li:hover .underline {
+    display: block;
+}
+
+main nav ul li:hover {
+    color: white;
 }
 
 main .music_cards .song_card {
     width: calc(100% / 6 - 10px);
     margin: 0 5px;
+}
+
+main .music_cards .song_card span {
+    font-size: 12px;
 }
 
 .music_cards:last-child .song_card .cover {
@@ -227,6 +273,36 @@ main .music_cards .song_card {
     display: block;
     width: 100%;
     object-fit: contain;
+}
+
+.music_cards .song_card:hover {
+    cursor: pointer;
+}
+
+.music_cards .song_card .cover {
+    position: relative;
+}
+
+.cover .play {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.song_card:hover .cover > .play {
+    display: flex;
+    align-items: center;
+}
+
+.cover .play i {
+    width: 100%;
+    font-size: 50px;
+    color: white;
 }
 
 /* FOOTER */
@@ -272,7 +348,7 @@ footer .actions_central .play {
     font-size: 28px;
 }
 
-footer .actions_central .play:hover {
+footer .actions_central i:hover {
     transform: scale(1.2);
 }
 
