@@ -40,7 +40,6 @@ button {
 
 .fixed {
     position: fixed;
-    color: white;
 }
 
 .fixed button:hover {
@@ -72,12 +71,12 @@ ul {
 }
 
 /* colors */
-.white {
-    color: white;
-}
-
 .black {
     color: black;
+}
+
+.white {
+    color: white;
 }
 
 /* distances */
@@ -157,6 +156,7 @@ aside {
 
 aside .logo {
     line-height: 90px;
+    width: 100%;
 }
 
 aside .logo img {
@@ -189,13 +189,6 @@ aside .playlists .add-playlist {
     font-size: 15px;
 }
 
-aside a:hover,
-aside span:hover,
-aside .playlists button:hover {
-    color: white;
-    cursor: pointer;
-}
-
 aside .playlist-names span {
     line-height: 25px;
 }
@@ -217,7 +210,6 @@ aside .user i {
 main {
     padding: 90px 20px 20px;
     overflow-y: auto;
-    flex-wrap: wrap;
 }
 
 main .fixed {
@@ -228,6 +220,7 @@ main .fixed {
     height: 90px;
     text-align: right;
     padding: 20px 5px;
+    z-index: 1;
 }
 
 main .fixed button {
@@ -236,6 +229,8 @@ main .fixed button {
     border-radius: 50px;
 }
 
+
+/* main nav */
 main nav ul {
     justify-content: center;
 }
@@ -261,17 +256,11 @@ main nav li:hover .underline {
     display: block;
 }
 
-main nav ul li:hover {
-    color: white;
-}
 
+/* album selection */
 main .music_cards .song_card {
     width: calc(100% / 6 - 10px);
     margin: 0 5px;
-}
-
-main .music_cards .song_card span {
-    font-size: 12px;
 }
 
 .music_cards:last-child .song_card .cover {
@@ -282,10 +271,6 @@ main .music_cards .song_card span {
     display: block;
     width: 100%;
     object-fit: contain;
-}
-
-.music_cards .song_card:hover {
-    cursor: pointer;
 }
 
 .music_cards .song_card .cover {
@@ -300,7 +285,6 @@ main .music_cards .song_card span {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
-    z-index: 1;
 }
 
 .song_card:hover .cover > .play {
@@ -357,12 +341,7 @@ footer span {
 }
 
 footer .title span:hover {
-    color: white;
     text-decoration: underline;
-}
-
-footer .actions_central {
-    color: white;
 }
 
 footer .actions_central button i {
@@ -382,21 +361,29 @@ footer .actions_right i {
     font-size: 15px;
 }
 
-footer i:hover {
+aside a:hover,
+aside span:hover,
+aside .playlists button:hover,
+footer i:hover,
+footer .title span:hover,
+main nav ul li:hover {
     color: white;
+}
+
+aside a:hover,
+aside span:hover,
+aside .playlists button:hover,
+footer i:hover,
+footer .progress_bar:hover,
+footer .actions_left span:hover,
+.music_cards .song_card:hover {
     cursor: pointer;
 }
 
-footer .actions_left span:hover {
-    cursor: pointer;
-}
-
-footer .progress_bar:hover {
-    cursor: pointer;
-}
+/* footer progress */
 
 footer .actions_central .progress {
-    min-width: 60%;
+    min-width: 85%;
     justify-content: space-between;
 }
 
@@ -441,7 +428,7 @@ footer .progress:hover .progress_bar::before {
 }
 
 .actions_right .progress {
-    min-width: 150px;
+    min-width: 30%;
 }
 
 
@@ -450,10 +437,6 @@ footer .progress:hover .progress_bar::before {
     main .music_cards .song_card {
     width: calc(100% / 4 - 10px);
     margin: 0 5px;
-    }
-
-    footer .actions_central .progress {
-        min-width: 65%;
     }
 }
 
@@ -466,39 +449,24 @@ footer .progress:hover .progress_bar::before {
     footer .console {
         justify-content: space-around;
     }
+
     footer .actions_central .console button {
         margin: 0;
-        }
-
-    footer .actions_central .progress {
-        min-width: 80%;
-    }
-
-    footer .actions_right .progress {
-        min-width: 125px;
     }
 
     main .music_cards .song_card {
         width: calc(100% / 2 - 10px);
         margin: 0 5px;
-        }
+    }
 }
 
 @media screen and (max-width: 650px) {
     footer .actions_right {
         justify-content: space-between;
     }
-
-    footer .actions_right .progress {
-        min-width: 90px;
-    }
-
-    footer .actions_central .progress {
-        min-width: 85%;
-    }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 550px) {
     aside {
         width: 75px;
         align-items: center;
@@ -508,11 +476,10 @@ footer .progress:hover .progress_bar::before {
         width: calc(100% - 75px);
     }
 
-    aside .logo {
-        width: 100%;
-    }
-
-    aside .wide_logo {
+    aside .wide_logo,
+    aside span,
+    h3,
+    .add-playlist {
         display: none;
     }
 
@@ -520,35 +487,23 @@ footer .progress:hover .progress_bar::before {
         display: inline-block;
     }
 
+    aside .install i,
+    aside .user,
     aside .action a > img {
-        width: 100%;
-        margin: 0;
+        margin-right: 0;
     }
 
     aside .install {
         padding: 0;
     }
 
-    aside .install i{
-        margin-right: 0;
-    }
-    
+    aside .install i,
     aside .user {
-        margin-right: 0;
+        font-size: 25px;
     }
 
     aside .user,
     aside .playlists {
-        width: 80%;
-    }
-
-    aside span,
-    h3,
-    .add-playlist {
-        display: none;
-    }
-
-    aside i {
-        font-size: 25px;
+        width: calc(100% - 10px);
     }
 }
