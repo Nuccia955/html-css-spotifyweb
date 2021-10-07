@@ -59,6 +59,10 @@ button {
     flex-grow: 1;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .text-center {
     text-align: center;
 }
@@ -102,6 +106,10 @@ ul {
 
 .mr_20 {
     margin-right: 20px;
+}
+
+.mr_50 {
+    margin-right: 50px;
 }
 
 .mt_25 {
@@ -155,6 +163,10 @@ aside .logo img {
     vertical-align: middle;
 }
 
+aside .strict_logo {
+    display: none;
+}
+
 aside nav li.action a {
     align-items: center;
 }
@@ -177,9 +189,6 @@ aside .playlists .add-playlist {
     font-size: 15px;
 }
 
-aside .playlists button:hover i {
-    background-color: #fff;
-}
 aside a:hover,
 aside span:hover,
 aside .playlists button:hover {
@@ -314,9 +323,25 @@ footer {
     padding: 10px;
 }
 
-footer.main_actions .actions_left,
+footer.main_actions .actions_left {
+    max-width: 30%;
+    justify-content: flex-start;
+}
+
 footer.main_actions .actions_right {
-    width: 15%;
+    justify-content: flex-end;
+    min-width: 30%;
+}
+
+footer.main_actions .actions_left button,
+footer.main_actions .actions_right button,
+footer.main_actions .actions_right .progress {
+    margin:0 5px;
+}
+
+footer .console {
+    justify-content: center;
+    width: 100%;
 }
 
 footer .console button {
@@ -371,7 +396,7 @@ footer .progress_bar:hover {
 }
 
 footer .actions_central .progress {
-    min-width: 50%;
+    min-width: 60%;
     justify-content: space-between;
 }
 
@@ -415,10 +440,115 @@ footer .progress:hover .progress_bar::before {
     background-color: #1ed760;
 }
 
-.actions_right {
-    justify-content: space-between;
+.actions_right .progress {
+    min-width: 150px;
 }
 
-.actions_right .progress {
-    min-width: 60%;
+
+/* MEDIA-QUERIES */
+@media screen and (max-width: 992px) {
+    main .music_cards .song_card {
+    width: calc(100% / 4 - 10px);
+    margin: 0 5px;
+    }
+
+    footer .actions_central .progress {
+        min-width: 65%;
+    }
+}
+
+@media screen and (max-width: 778px) {
+    footer.main_actions .actions_left .title {
+        margin-right: 0;
+        flex-grow: 1;
+    }
+
+    footer .console {
+        justify-content: space-around;
+    }
+    footer .actions_central .console button {
+        margin: 0;
+        }
+
+    footer .actions_central .progress {
+        min-width: 80%;
+    }
+
+    footer .actions_right .progress {
+        min-width: 125px;
+    }
+
+    main .music_cards .song_card {
+        width: calc(100% / 2 - 10px);
+        margin: 0 5px;
+        }
+}
+
+@media screen and (max-width: 650px) {
+    footer .actions_right {
+        justify-content: space-between;
+    }
+
+    footer .actions_right .progress {
+        min-width: 90px;
+    }
+
+    footer .actions_central .progress {
+        min-width: 85%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    aside {
+        width: 75px;
+        align-items: center;
+    }
+
+    main .fixed {
+        width: calc(100% - 75px);
+    }
+
+    aside .logo {
+        width: 100%;
+    }
+
+    aside .wide_logo {
+        display: none;
+    }
+
+    aside .strict_logo {
+        display: inline-block;
+    }
+
+    aside .action a > img {
+        width: 100%;
+        margin: 0;
+    }
+
+    aside .install {
+        padding: 0;
+    }
+
+    aside .install i{
+        margin-right: 0;
+    }
+    
+    aside .user {
+        margin-right: 0;
+    }
+
+    aside .user,
+    aside .playlists {
+        width: 80%;
+    }
+
+    aside span,
+    h3,
+    .add-playlist {
+        display: none;
+    }
+
+    aside i {
+        font-size: 25px;
+    }
 }
